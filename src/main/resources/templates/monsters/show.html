@@ -23,7 +23,7 @@
     </thead>
     <tbody class="monster" th:each="monster : ${monsters}">
     <tr>
-        <td>1</td>
+        <td th:text="${post.getTitle()}">1</td>
         <td>Clark</td>
         <td>Kent</td>
         <td>clarkkent@mail.com</td>
