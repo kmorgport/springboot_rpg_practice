@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace ="partials/head :: head">
 </head>
 <body>
-
+<nav th:replace ="partials/navbar :: navbar"></nav>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Base HP</th>
+        <th>Base Attack</th>
+        <th>Base Defense</th>
+        <th>Base Special Attack</th>
+        <th>Base Special Defense</th>
+        <th>Base Speed</th>
+        <th>Base Exp</th>
+        <th>Exp Group</th>
+        <th>Type 1</th>
+        <th>Type 2</th>
+    </tr>
+    </thead>
+    <tbody class="monster" th:each="monster : ${monsters}">
+    <tr>
+        <td>1</td>
+        <td>Clark</td>
+        <td>Kent</td>
+        <td>clarkkent@mail.com</td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace ="partials/footer :: footer"></footer>
 </body>
 </html>
