@@ -3,7 +3,7 @@
 <head th:replace ="partials/head :: head">
 </head>
 <body>
-<nav th:replace ="partials/navbar :: navbar"></nav>
+<!--<nav th:replace ="partials/navbar :: navbar"></nav>-->
 <table class="table">
     <thead>
     <tr>
@@ -23,13 +23,20 @@
     </thead>
     <tbody class="monster" th:each="monster : ${monsters}">
     <tr>
-        <td th:text="${post.getTitle()}">1</td>
-        <td>Clark</td>
-        <td>Kent</td>
-        <td>clarkkent@mail.com</td>
+        <td th:text="${monster.id}">1</td>
+        <td th:text="${monster.name}">1</td>
+        <td th:text="${monster.baseHP}">1</td>
+        <td th:text="${monster.baseAttack}">1</td>
+        <td th:text="${monster.baseDefense}">1</td>
+        <td th:text="${monster.baseSpecialAttack}">1</td>
+        <td th:text="${monster.baseSpecialDefense}">1</td>
+        <td th:text="${monster.baseSpeed}">1</td>
+        <td th:text="${monster.baseExp}">1</td>
+        <td th:text="${monster.type1}">1</td>
+        <td th:text="${monster.type2}">1</td>
     </tr>
     </tbody>
 </table>
-<footer th:replace ="partials/footer :: footer"></footer>
+<!--<footer th:replace ="partials/footer :: footer"></footer>-->
 </body>
 </html>
