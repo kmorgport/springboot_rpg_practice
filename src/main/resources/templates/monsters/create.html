@@ -1,4 +1,4 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace ="partials/head :: head">
 
@@ -23,8 +23,12 @@
 <!--    <input type="submit" value="create post">-->
 
 <!--</form>-->
-<form th:action="@{monsters/create}" th:method="post" th:object="${monster}">
+<form th:action="@{/monsters/create}" th:method="post" th:object="${monster}">
     <h2>Create Ad Form</h2>
+
+    <br>
+    ID:
+    <input th:field="*{id}"/>
 
     <br>
     Name:

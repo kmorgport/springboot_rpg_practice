@@ -38,6 +38,7 @@ class MonsterController {
     @ResponseBody
     public String createPost(@ModelAttribute Monster monster) {
         monsterDao.save(monster);
+        System.out.println(monster);
         return "a new monster";
     }
 

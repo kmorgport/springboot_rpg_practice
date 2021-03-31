@@ -7,85 +7,45 @@ import javax.persistence.*;
 public class Monster {
 
     @Id
+
     private long id;
 
-    @Column(nullable = false)
+    @Column(name="name",length = 225, nullable = false)
     private String name;
 
-    @Column(nullable=false)
+    @Column(name="basehp",nullable=false)
     private int baseHP;
 
-    @Column(nullable=false)
+    @Column(name="base_attack", nullable=false)
     private int baseAttack;
 
-    @Column(nullable=false)
+    @Column(name="base_defense",nullable=false)
     private int baseDefense;
 
-    @Column(nullable=false)
+    @Column(name="base_special_attack", nullable=false)
     private int baseSpecialAttack;
 
-    @Column(nullable=false)
+    @Column(name="base_special_defense",nullable=false)
     private int baseSpecialDefense;
 
-    @Column(nullable=false)
+    @Column(name="base_speed", nullable=false)
     private int baseSpeed;
 
-    @Column(nullable=false)
+    @Column(name="base_exp" ,nullable=false)
     private int baseExp;
 
-    @Column(nullable=false)
+    @Column(name="exp_group", length = 225, nullable=true)
     private String expGroup;
 
-    @Column(nullable=false)
+    @Column(name="type1" ,length = 225, nullable = false)
     private String type1;
 
-    @Column
+    @Column(name="type2",length = 225)
     private String type2;
 
     public Monster(){}
 
-    public Monster(String name, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, int baseExp, String expGroup, String type1) {
-        this.name = name;
-        this.baseHP = baseHP;
-        this.baseAttack = baseAttack;
-        this.baseDefense = baseDefense;
-        this.baseSpecialAttack = baseSpecialAttack;
-        this.baseSpecialDefense = baseSpecialDefense;
-        this.baseSpeed = baseSpeed;
-        this.baseExp = baseExp;
-        this.expGroup = expGroup;
-        this.type1 = type1;
-    }
-
-    public Monster(String name, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, int baseExp, String expGroup, String type1, String type2) {
-        this.name = name;
-        this.baseHP = baseHP;
-        this.baseAttack = baseAttack;
-        this.baseDefense = baseDefense;
-        this.baseSpecialAttack = baseSpecialAttack;
-        this.baseSpecialDefense = baseSpecialDefense;
-        this.baseSpeed = baseSpeed;
-        this.baseExp = baseExp;
-        this.expGroup = expGroup;
-        this.type1 = type1;
-        this.type2 = type2;
-    }
-
-    public Monster(long id, String name, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, int baseExp, String expGroup, String type1) {
-        this.id = id;
-        this.name = name;
-        this.baseHP = baseHP;
-        this.baseAttack = baseAttack;
-        this.baseDefense = baseDefense;
-        this.baseSpecialAttack = baseSpecialAttack;
-        this.baseSpecialDefense = baseSpecialDefense;
-        this.baseSpeed = baseSpeed;
-        this.baseExp = baseExp;
-        this.expGroup = expGroup;
-        this.type1 = type1;
-    }
-
-    public Monster(long id, String name, int baseHP, int baseAttack, int baseDefense, int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, int baseExp, String expGroup, String type1, String type2) {
+    public Monster(int baseAttack, int baseDefense,int baseExp,int baseHP,  int baseSpecialAttack, int baseSpecialDefense, int baseSpeed, String expGroup,String name, String type1, String type2,long id) {
         this.id = id;
         this.name = name;
         this.baseHP = baseHP;
@@ -99,8 +59,6 @@ public class Monster {
         this.type1 = type1;
         this.type2 = type2;
     }
-
-
 
     public long getId(){
         return this.id;
@@ -111,23 +69,71 @@ public class Monster {
     }
 
     public int getBaseHP() {
-        return baseHP;
+        return this.baseHP;
     }
 
     public int getBaseExp() {
-        return baseExp;
+        return this.baseExp;
     }
 
     public String getExpGroup() {
-        return expGroup;
+        return this.expGroup;
     }
 
     public String getType1() {
-        return type1;
+        return this.type1;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBaseHP(int baseHP) {
+        this.baseHP = baseHP;
+    }
+
+    public void setBaseAttack(int baseAttack) {
+        this.baseAttack = baseAttack;
+    }
+
+    public void setBaseDefense(int baseDefense) {
+        this.baseDefense = baseDefense;
+    }
+
+    public void setBaseSpecialAttack(int baseSpecialAttack) {
+        this.baseSpecialAttack = baseSpecialAttack;
+    }
+
+    public void setBaseSpecialDefense(int baseSpecialDefense) {
+        this.baseSpecialDefense = baseSpecialDefense;
+    }
+
+    public void setBaseSpeed(int baseSpeed) {
+        this.baseSpeed = baseSpeed;
+    }
+
+    public void setBaseExp(int baseExp) {
+        this.baseExp = baseExp;
+    }
+
+    public void setExpGroup(String expGroup) {
+        this.expGroup = expGroup;
+    }
+
+    public void setType1(String type1) {
+        this.type1 = type1;
+    }
+
+    public void setType2(String type2) {
+        this.type2 = type2;
     }
 
     public String getType2() {
-        return type2;
+        return this.type2;
     }
 
     public int getBaseAttack(){
