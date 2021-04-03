@@ -59,6 +59,9 @@ public class Teammate{
     @Column(name="total_exp", nullable = false)
     private long totalExp;
 
+    @Column(name="exp_to_next",nullable = false)
+    private long expToNext;
+
     @Column(name="move1_id",nullable=false)
     private Long move1Id;
 
@@ -96,6 +99,7 @@ public class Teammate{
         this.specialAttackEV = specialAttackEV;
         this.specialDefenseEV = specialDefenseEV;
         this.speedEV = speedEV;
+        this.totalExp = totalExp;
         this.move1Id = move1Id;
         this.move2Id = move2Id;
         this.move3Id = move3Id;
@@ -166,6 +170,22 @@ public class Teammate{
 
     public void setSpecialDefenseEV(int specialDefenseEV) {
         this.specialDefenseEV = specialDefenseEV;
+    }
+
+    public long getTotalExp() {
+        return totalExp;
+    }
+
+    public void setTotalExp(long totalExp) {
+        this.totalExp = totalExp;
+    }
+
+    public long getExpToNext() {
+        return expToNext;
+    }
+
+    public void setExpToNext(long expToNext) {
+        this.expToNext = expToNext;
     }
 
     public int getSpeedEV() {
