@@ -1,13 +1,16 @@
 package com.codeup.springboot_rpg_practice.repo;
 
-import com.codeup.springboot_rpg_practice.models.Monster;
+
+import com.codeup.springboot_rpg_practice.models.Teammate;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface MonsterRepository extends JpaRepository<Monster,Long> {
+public interface TeammateRepository extends JpaRepository<Teammate, Long> {
 
-    List<Monster> findByIdEquals(long id);
+    List<Teammate> findByUniqueId(long id);
+
+
 }

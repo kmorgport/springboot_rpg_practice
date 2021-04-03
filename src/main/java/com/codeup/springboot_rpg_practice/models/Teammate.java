@@ -3,8 +3,8 @@ package com.codeup.springboot_rpg_practice.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "teammate")
-public class Teammate {
+@Table(name = "teammates")
+public class Teammate{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,10 +13,9 @@ public class Teammate {
     @Column(name="tamer_id",nullable=false)
     private Long tamerId;
 
-
-    @ManyToOne
-    @JoinColumn(name="species_id")
-    private Monster species;
+//    @ManyToOne
+//    @JoinColumn(name="species_id")
+//    private Monster species;
 
     @Column(name="health_IV",nullable=false)
     private int healthIV;
@@ -57,6 +56,9 @@ public class Teammate {
     @Column(name="speed_EV",nullable=false)
     private int speedEV;
 
+    @Column(name="total_exp", nullable = false)
+    private long totalExp;
+
     @Column(name="move1_id",nullable=false)
     private Long move1Id;
 
@@ -77,7 +79,7 @@ public class Teammate {
 
     public Teammate(){}
 
-    public Teammate(Long uniqueId, Long tamerId, int healthIV, int attackIV, int defenseIV, int specialAttackIV, int specialDefenseIV, int speedIV, int speciesId1, int healthEV, int attackEV, int defenseEV, int specialAttackEV, int specialDefenseEV, int speedEV, Long move1Id, Long move2Id, Long move3Id, Long move4Id, boolean teamStatus, int teamOrder) {
+    public Teammate(Long uniqueId, Long tamerId, int healthIV, int attackIV, int defenseIV, int specialAttackIV, int specialDefenseIV, int speedIV, int speciesId1, int healthEV, int attackEV, int defenseEV, int specialAttackEV, int specialDefenseEV, int speedEV,Long totalExp, Long move1Id, Long move2Id, Long move3Id, Long move4Id, boolean teamStatus, int teamOrder) {
         this.uniqueId = uniqueId;
         this.tamerId = tamerId;
 //        this.speciesId = speciesId;
@@ -118,13 +120,13 @@ public class Teammate {
         this.tamerId = tamerId;
     }
 
-    public int getSpeciesId() {
-        return speciesId;
-    }
-
-    public void setSpeciesId(int speciesId) {
-        this.speciesId = speciesId;
-    }
+//    public int getSpeciesId() {
+//        return speciesId;
+//    }
+//
+//    public void setSpeciesId(int speciesId) {
+//        this.speciesId = speciesId;
+//    }
 
     public int getHealthEV() {
         return healthEV;

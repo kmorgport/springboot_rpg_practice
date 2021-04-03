@@ -49,8 +49,8 @@ public class Monster {
     @Column(name="next_form")
     private String nextForm;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "species")
-    private List<Teammate> teammates;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "species")
+//    private List<Teammate> teammates;
 
     public Monster(){}
 
