@@ -10,8 +10,9 @@ public class Teammate{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long uniqueId;
 
-    @Column(name="tamer_id",nullable=false)
-    private Long tamerId;
+    @ManyToOne
+    @JoinColumn(name = "tamer_id")
+    private Player player;
 
 //    @ManyToOne
 //    @JoinColumn(name="species_id")
@@ -82,9 +83,8 @@ public class Teammate{
 
     public Teammate(){}
 
-    public Teammate(Long uniqueId, Long tamerId, int healthIV, int attackIV, int defenseIV, int specialAttackIV, int specialDefenseIV, int speedIV, int speciesId1, int healthEV, int attackEV, int defenseEV, int specialAttackEV, int specialDefenseEV, int speedEV,Long totalExp, Long move1Id, Long move2Id, Long move3Id, Long move4Id, boolean teamStatus, int teamOrder) {
+    public Teammate(Long uniqueId, int healthIV, int attackIV, int defenseIV, int specialAttackIV, int specialDefenseIV, int speedIV, int speciesId1, int healthEV, int attackEV, int defenseEV, int specialAttackEV, int specialDefenseEV, int speedEV,Long totalExp, Long move1Id, Long move2Id, Long move3Id, Long move4Id, boolean teamStatus, int teamOrder) {
         this.uniqueId = uniqueId;
-        this.tamerId = tamerId;
 //        this.speciesId = speciesId;
         this.healthIV = healthIV;
         this.attackIV = attackIV;
@@ -114,14 +114,6 @@ public class Teammate{
 
     public void setUniqueId(Long uniqueId) {
         this.uniqueId = uniqueId;
-    }
-
-    public Long getTamerId() {
-        return tamerId;
-    }
-
-    public void setTamerId(Long tamerId) {
-        this.tamerId = tamerId;
     }
 
 //    public int getSpeciesId() {
