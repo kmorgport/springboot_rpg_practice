@@ -1,11 +1,15 @@
 package com.codeup.springboot_rpg_practice.models;
 
+import com.codeup.springboot_rpg_practice.repo.MoveRepository;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MonsterModel extends Teammate{
+
+    MoveRepository movesDao;
 
     private long speciesId;
 
@@ -69,7 +73,17 @@ public class MonsterModel extends Teammate{
 
     private int teamOrder;
 
-    public MonsterModel(Monster monster, Teammate teammate){
+    private List<Move> moveList;
+
+    public MonsterModel(){};
+
+    public MonsterModel(Monster monster, Teammate teammate, MoveRepository movesDao){
+        List<Long> moveIds = new ArrayList<>();
+        moveIds.add(0,teammate.getMove1Id());
+        moveIds.add(0,teammate.getMove2Id());
+        moveIds.add(0,teammate.getMove3Id());
+        moveIds.add(0,teammate.getMove4Id());
+        this.moveList = findMoves(moveIds, movesDao);
         this.speciesId = monster.getId();
         this.name = monster.getName();
         this.baseHP = monster.getBaseHP();
@@ -102,6 +116,18 @@ public class MonsterModel extends Teammate{
         this.teamOrder = teammate.getTeamOrder();
         this.teamStatus = teammate.isTeamStatus();
 
+    }
+
+    public List<Move> findMoves(List<Long> moveIds, MoveRepository movesDao){
+        List<Move> moveList = new ArrayList<>();
+        for(Long move: moveIds){
+            if(move!=null){
+                Move newMove = movesDao.findByUniqueIdEquals(move).get(0);
+                moveList.add(newMove);
+            }
+
+        }
+        return moveList;
     }
 
 }
